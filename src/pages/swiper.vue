@@ -67,12 +67,16 @@ function onScroll(event: UIEvent) {
     const opacity = cardinalNext - constant > 0.5 ? cardinalNext - constant : 0.5
 
     const scrollWidthScale = constant - cardinal > 1 ? 0 : constant - cardinal
-    const width = `calc(100% - ${(array.value.length - cardinal) * 40 * (scrollWidthScale)}px - 40px)`
+    let width = `calc(100% - ${(array.value.length - cardinal) * 40 * (scrollWidthScale)}px)`
 
     if (constant === 0)
       array.value[cardinal].styles.opacity = opacity
     else
       array.value[cardinal - 1 >= 0 ? cardinal - 1 : 0].styles.opacity = opacity
+
+    if (constant === array.value.length)
+      width = `calc(100% - ${(array.value.length - cardinal) * 40 * (scrollWidthScale)}px - 40px)`
+
     array.value[cardinal].styles.width = width
   })
 }
