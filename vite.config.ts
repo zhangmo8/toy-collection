@@ -8,6 +8,7 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import UnoCSS from 'unocss/vite'
 import VueMacros from 'unplugin-vue-macros/vite'
+import MarkDown from 'vite-plugin-vue-markdown'
 
 export default defineConfig({
   resolve: {
@@ -16,10 +17,12 @@ export default defineConfig({
     },
   },
   plugins: [
+    MarkDown(),
     VueMacros({
       plugins: {
         vue: Vue({
           reactivityTransform: true,
+          include: [/\.vue$/, /\.md$/], // <--
         }),
       },
     }),
