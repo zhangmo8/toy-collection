@@ -21,6 +21,8 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.38.4",
+    "@antv/x6": "^2.11.1",
+    "@antv/x6-vue-shape": "^2.0.11",
     "@iconify-json/carbon": "^1.1.16",
     "@types/node": "^18.15.11",
     "@unocss/eslint-config": "^0.51.4",

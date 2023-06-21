@@ -24,6 +24,12 @@ devDependencies:
   '@antfu/eslint-config':
     specifier: ^0.38.4
     version: 0.38.4(eslint@8.38.0)(typescript@4.9.5)
+  '@antv/x6':
+    specifier: ^2.11.1
+    version: 2.11.1
+  '@antv/x6-vue-shape':
+    specifier: ^2.0.11
+    version: 2.0.11(@antv/x6@2.11.1)(vue@3.2.47)
   '@iconify-json/carbon':
     specifier: ^1.1.16
     version: 1.1.16
@@ -218,6 +224,40 @@ packages:
 
   /@antfu/utils@0.7.2:
     resolution: {integrity: sha512-vy9fM3pIxZmX07dL+VX1aZe7ynZ+YyB0jY+jE6r3hOK6GNY2t6W8rzpFC4tgpbXUYABkFQwgJq2XYXlxbXAI0g==}
+    dev: true
+
+  /@antv/x6-common@2.0.12:
+    resolution: {integrity: sha512-7PcvHGJ2UhrBEtsLI6MaHw6BCMhy22leCH8vCaMvmF32EEQ/491v6DKVPhcpp0dYZNERpfqvAB1w407Aw+bwLA==}
+    dependencies:
+      lodash-es: 4.17.21
+      utility-types: 3.10.0
+    dev: true
+
+  /@antv/x6-geometry@2.0.5:
+    resolution: {integrity: sha512-MId6riEQkxphBpVeTcL4ZNXL4lScyvDEPLyIafvWMcWNTGK0jgkK7N20XSzqt8ltJb0mGUso5s56mrk8ysHu2A==}
+    dev: true
+
+  /@antv/x6-vue-shape@2.0.11(@antv/x6@2.11.1)(vue@3.2.47):
+    resolution: {integrity: sha512-LYNkvL9AjbeAi6ZzA2/aNRKv0E0+bgR5nMQlcqC+75bYoZtCpd7ZkECcOQhDU4s/DE2+EyyPX8aI1e2pA39Y/A==}
+    peerDependencies:
+      '@antv/x6': ^2.x
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^2.0.0 || >=3.0.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      '@antv/x6': 2.11.1
+      vue: 3.2.47
+      vue-demi: 0.14.5(vue@3.2.47)
+    dev: true
+
+  /@antv/x6@2.11.1:
+    resolution: {integrity: sha512-DwyuT/zuTEhwsnKwCj67cadwLeEbB5jfdCxrkTnEm6pg0+vT3FinbF71IK7SHoY8d4HOHl+sJt7ikJfr61JqLw==}
+    dependencies:
+      '@antv/x6-common': 2.0.12
+      '@antv/x6-geometry': 2.0.5
+      utility-types: 3.10.0
     dev: true
 
   /@babel/code-frame@7.18.6:
@@ -1713,7 +1753,7 @@ packages:
   /@vueuse/shared@9.13.0(vue@3.2.47):
     resolution: {integrity: sha512-UrnhU+Cnufu4S6JLCPZnkWh0WwZGUp72ktOF2DFptMlOs3TOdVv8xJN53zhHGARmVOsz5KqOls09+J1NR6sBKw==}
     dependencies:
-      vue-demi: 0.13.6(vue@3.2.47)
+      vue-demi: 0.14.5(vue@3.2.47)
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
@@ -4046,6 +4086,10 @@ packages:
       p-locate: 5.0.0
     dev: true
 
+  /lodash-es@4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: true
+
   /lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
     dev: true
@@ -5910,6 +5954,11 @@ packages:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
 
+  /utility-types@3.10.0:
+    resolution: {integrity: sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==}
+    engines: {node: '>= 4'}
+    dev: true
+
   /validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
     dependencies:
@@ -6088,6 +6137,20 @@ packages:
 
   /vue-demi@0.13.6(vue@3.2.47):
     resolution: {integrity: sha512-02NYpxgyGE2kKGegRPYlNQSL1UWfA/+JqvzhGCOYjhfbLWXU5QQX0+9pAm/R2sCOPKr5NBxVIab7fvFU0B1RxQ==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: 3.2.47
+
+  /vue-demi@0.14.5(vue@3.2.47):
+    resolution: {integrity: sha512-o9NUVpl/YlsGJ7t+xuqJKx8EBGf1quRhCiT6D/J0pfwmk9zUwYkC7yrF4SZCe6fETvSM3UNL2edcbYrSyc4QHA==}
     engines: {node: '>=12'}
     hasBin: true
     requiresBuild: true
